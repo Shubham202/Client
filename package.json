@@ -1,6 +1,7 @@
 {
     "name": "frontend",
     "version": "0.1.0",
+    "homepage": "https://gitname.github.io/client",
     "proxy": "https://quotes-mern-website.herokuapp.com/",
     "private": true,
     "dependencies": {
