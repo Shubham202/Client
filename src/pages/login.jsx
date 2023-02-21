@@ -25,8 +25,8 @@ const Login = () => {
             const { data: res } = await axios.post(url, data);
             localStorage.setItem('token',res.data);
             localStorage.setItem('author',author);
-            navigate("/login");
-            window.location = "https://quotes-client.onrender.com/dashboard";
+            navigate("/");
+            // window.location = "https://quotes-client.onrender.com/dashboard";
         } catch (err) {
             setError(err.response.data.message);
         }
