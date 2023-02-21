@@ -6,9 +6,9 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        // localStorage.setItem('author');
-        navigate("/login");
-        window.location.reload();
+        localStorage.setItem('author');
+        navigate("/");
+        // window.location.reload();
     };
 
     const user = localStorage.getItem("token");

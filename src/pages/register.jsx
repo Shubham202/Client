@@ -24,7 +24,7 @@ const Register = () => {
             const url = "https://quotes-jfuc.onrender.com/api/users";
             const {data: res} = await axios.post(url, data);
             navigate('/login')
-            console.log(res.message);
+            // console.log(res.message);
         } catch (err) {
             if (err.response.status === 409) {
                 setError(err.response.data.message)
