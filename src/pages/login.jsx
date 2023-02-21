@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
@@ -8,6 +9,8 @@ const Login = () => {
     });
 
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const handleChange = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value });
@@ -22,7 +25,8 @@ const Login = () => {
             const { data: res } = await axios.post(url, data);
             localStorage.setItem('token',res.data);
             localStorage.setItem('author',author);
-            window.location = '/dashboard';
+            navigate("/login");
+            window.location = "https://quotes-client.onrender.com/dashboard";
         } catch (err) {
             setError(err.response.data.message);
         }
