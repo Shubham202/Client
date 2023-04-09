@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
+    const history = useHistory();
+
     const [data, setData] = useState({
         name: "",
         password: ""
@@ -25,7 +28,8 @@ const Login = () => {
             const { data: res } = await axios.post(url, data);
             localStorage.setItem('token',res.data);
             localStorage.setItem('author',author);
-            navigate('/dashboard');
+            history.push("/dashboard");
+            // navigate('/dashboard');
             // window.location = "https://quotes-client.onrender.com/dashboard";
         } catch (err) {
             setError(err.response.data.message);
